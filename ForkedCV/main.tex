@@ -1,0 +1,294 @@
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+%% Fork: CV dark mode toggle enabler to use a inverted color palette.
+%% Use the "darkmode" option if you want a color palette used to 
+% \documentclass[10pt,a4paper,darkmode]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Fork: Change the color codes to test your personal variant on any mode
+\ifdarkmode%
+  \definecolor{PrimaryColor}{HTML}{0F52D9}
+  \definecolor{SecondaryColor}{HTML}{3F7FFF}
+  \definecolor{ThirdColor}{HTML}{F3890B}
+  \definecolor{BodyColor}{HTML}{ABABAB}
+  \definecolor{EmphasisColor}{HTML}{ABA2A2}
+  \definecolor{BackgroundColor}{HTML}{242424}
+\else%
+  \definecolor{PrimaryColor}{HTML}{001F5A}
+  \definecolor{SecondaryColor}{HTML}{0039AC}
+  \definecolor{ThirdColor}{HTML}{F3890B}
+  \definecolor{BodyColor}{HTML}{666666}
+  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+\fi%
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{PrimaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+%% \addbibresource{sample.bib}
+
+\begin{document}
+    \name{ZeMing Zhang}
+    \tagline{Senior Computer Science Student}
+    %% You can add multiple photos on the left or right
+    \photoL{3cm}{ZeMing-Zhang}
+    
+    \personalinfo{
+        \email{zemingzhang1@gmail.com}
+        \smallskip
+        \phone{347-322-5173}
+        \location{Flushing Queens, United States}\\
+        \linkedin{zeming-zhang-2000}
+        \github{zemingzhang1}
+        \github{Zays-GitLab}
+        \dev{zeming}
+        %\homepage{nicolasomar.me}
+        %\medium{nicolasomar}
+        %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+        % \orcid{0000-0000-0000-0000}
+        %% You can add your own arbtrary detail with
+        %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+        % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+        %% Or you can declare your own field with
+        %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+        % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+        % \gitlab{your_id}
+    }
+    
+    \makecvheader
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    \AtBeginEnvironment{itemize}{\small}
+    
+    %% Set the left/right column width ratio to 6:4.
+    \columnratio{0.25}
+
+    % Start a 2-column paracol. Both the left and right columns will automatically
+    % break across pages if things get too long.
+    \begin{paracol}{2}
+        \cvsection{About Me}
+            \begin{quote}
+                Senior computer science student, had taken basic and advanced CS course work, current path is software dev and focusing on computer/cyber security.
+            \end{quote}
+        % ----- STRENGTHS -----
+        \cvsection{Hobbies}
+            \cvtag{Painting}
+            \cvtag{Sketching}\\
+            \cvtag{Cross Country}
+            \cvtag{Badminton}
+            \smallskip
+        % ----- STRENGTHS -----
+        
+        % ----- LEARNING -----
+        \cvsection{Learning}
+            \cvtag{C}
+            \cvtag{C++}
+            \cvtag{HTML}
+            \cvtag{CSS)}
+            \cvtag{JavaScript)}
+            \cvtag{Python}
+            \cvtag{Scala and Scala IO}
+            \cvtag{Swift}
+            \cvtag{React}
+            \cvtag{SQL}
+            \cvtag{Postgres}
+            \cvtag{Kotlin/ Java}
+            % \medskip
+            
+            % \cvtag{Rojo}
+            % \cvtag{Amarillo}
+            % \cvtag{Azul}
+            % \cvtag{Verde}
+            % \cvtag{Violeta}
+            % \cvtag{Naranja}
+            % \cvtag{Marron}
+            % \cvtag{Blanco}
+            % \cvtag{Gris}
+            % \cvtag{Negro}
+        % ----- LEARNING -----
+        
+        % ----- LANGUAGES -----
+        \cvsection{Languages}
+            \cvlang{Lang 1, Native}{English}
+            \vskip 0.05in
+
+            \cvlang{Lang 2, Native}{Chinese}
+            \vskip 0.05in
+
+            \cvlang{Lang 3, Elem}{Spanish}
+            \smallskip
+        % ----- LANGUAGES -----
+            
+        % ----- REFERENCES -----
+        \cvsection{Projects}
+            \cvevent{Project 1 }{\cvrepo{| \faGithub}{https://github.com/user/repo}\cvrepo{| \faGlobe}{https://repo-demo.com/}}{Mm YYYY -- Mm YYYY}{}
+            \begin{itemize}
+                \item Item 1
+                \item Item 2
+            \end{itemize}
+            \divider
+            
+            \cvevent{Project 1 }{\cvrepo{| \faGithub}{https://github.com/user/repo}\cvrepo{| \faGlobe}{https://repo-demo.com/}}{Mm YYYY -- Mm YYYY}{}
+            \begin{itemize}
+                \item Item 1
+                \item Item 2
+            \end{itemize}
+        % ----- REFERENCES -----
+        
+        % ----- MOST PROUD -----
+        % \cvsection{Most Proud of}
+        
+        % \cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}\\
+        % \divider
+        % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}\\
+        % \divider
+        % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+        % ----- MOST PROUD -----
+        
+        % \cvsection{A Day of My Life}
+        
+        % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+        % \wheelchart{outer radius}{inner radius}{
+        % comma-separated list of value/text width/color/detail}
+        % \wheelchart{1.5cm}{0.5cm}{%
+        %   6/8em/accent!30/{Sleep,\\beautiful sleep},
+        %   3/8em/accent!40/Hopeful novelist by night,
+        %   8/8em/accent!60/Daytime job,
+        %   2/10em/accent/Sports and relaxation,
+        %   5/6em/accent!20/Spending time with family
+        % }
+        
+        % use ONLY \newpage if you want to force a page break for
+        % ONLY the current column
+        \newpage
+        
+        %% Switch to the right column. This will now automatically move to the second
+        %% page if the content is too long.
+        \switchcolumn
+        
+        % % ----- ABOUT ME -----
+        % \cvsection{About Me}
+        %     \begin{quote}
+        %         Senior computer science student with full dedication and competences looking for an entry-level position.
+        %     \end{quote}
+        % % ----- ABOUT ME -----
+        
+        % ----- EXPERIENCE -----
+        \cvsection{Experience}
+            \cvevent{Programmer}{| University At Buffalo Nano-Satellite Laboratory}{Dec 2021 -- Now}{Buffalo NY, United States}
+            \begin{itemize}
+                \item Reviewed project specifications and designed NASA flight software solutions that met basic performance expectations, such as sending bus messages and building minimal flight software control applications.
+                \item Currently still in the onboarding process of GLADOS mission- satellite camera team. For more info: https://www.ubnl.space/missions/glados.
+            \end{itemize}
+            \vskip 0.15in
+            
+            \cvevent{Manager I (L4) Intern}{| Amazon.com}{Jun 2021 -- Mm Aug 2021}{Edison NJ, United States}
+            \begin{itemize}
+                \item Coach, manage, and developed Amazon Fulfillment Engine team of 50 to 200 Amazon associates.
+                \item Auditing Amazon SLAM lines for proper maintenance and adjustments.
+                \item Analyzing and gathering kick out data, package dimensions and content.
+                \item Conducted process improvement project and proposal that helped LGA9 to decrease kick out cost by approximately 25 percent (205,041 dollars).
+            \end{itemize}
+            \vskip 0.15in
+            
+            \cvevent{STEM Mentor}{| University At Buffalo, National Grid}{Sep 2019 -- Aug 2020}{Buffalo NY, United States}
+            \begin{itemize}
+                \item Demonstrated respect, friendliness and willingness to help wherever needed.
+                \item Supervised group of 7-12 students, 1st to 5th grade on the progress of learning STEM, while assigning the understand and completion of assignments.
+            \end{itemize}
+            \vskip 0.15in
+            
+            \cvevent{Programmer}{| University At Buffalo Robotics Club}{Sep 2019 -- Aug 2020}{Buffalo NY, United States}
+            \begin{itemize}
+                \item Demonstrated respect, friendliness and willingness to help wherever needed.
+                \item Supervised group of 7-12 students, 1st to 5th grade on the progress of learning STEM, while assigning the understand and completion of assignments.
+            \end{itemize}
+        % ----- EXPERIENCE -----
+        
+        % ----- EDUCATION -----
+        \cvsection{Education}
+            \cvevent{Bachelor of Science}{| SUNY University At Buffalo}{Aug 2018 -- Jul 2022}{Buffalo NY, United States}
+            \begin{itemize}
+                \item GPA: 3.2
+            \end{itemize}
+            \vskip 0.15in
+            \cvevent{Minor in CyberSecurity}{| SUNY University At Buffalo}{Aug 2021 -- Jul 2022}{Buffalo NY, United States}
+            \begin{itemize}
+                \item GPA: 3.2
+            \end{itemize}
+            \vskip 0.15in
+            \cvevent{Android Development }{| CodePath}{Feb 2022– Apr 2022}{Buffalo NY, United States}
+            \begin{itemize}
+                \item Currently in progress
+            \end{itemize}
+            \vskip 0.15in
+            \cvevent{IOS Development}{| CodePath, UB}{Aug 2019 – Dec 2020}{Buffalo NY, United States}
+            \begin{itemize}
+                \item Certificate of Course
+            \end{itemize}
+        % ----- EDUCATION -----
+        
+        % % ----- PROJECTS -----
+        % \cvsection{Projects}
+        %     \cvevent{Project 1 }{\cvrepo{| \faGitlab}{https://gitlab.com/user/repo}\cvrepo{| \faGlobe}{https://repo-demo.com/}}{Mm YYYY -- Mm YYYY}{}
+        %     \begin{itemize}
+        %         \item Item 1
+        %         \item Item 2
+        %     \end{itemize}
+        % % ----- PROJECTS -----
+    \end{paracol}
+\end{document}
