@@ -19,4 +19,7 @@ Will embed a PDF file using Google Docs Viewer
 
 Simply include the URL for a PDF document on it's own line, or wrapped in the embed tag like [embed]https://github.com/zemingzhang1/CV/blob/main/ZeMing-Zhang.pdf[/embed] and the plugin will embed the PDF into the page using the Google Docs Viewer embed code.
 
+
+{google_docs}github.com/zemingzhang1/CV/blob/main/ZeMing-Zhang.pdf{/google_docs}
+
 The url must end with `.pdf`
